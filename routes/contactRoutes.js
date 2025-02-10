@@ -7,7 +7,11 @@ const {
   createContact,
   updateContact,
   deleteContact,
+  searchContacts,
 } = require("../controllers/contactController");
+
+// Define the search route BEFORE the :id route
+router.get("/search", searchContacts);
 
 // GET /contacts
 router.get("/", getAllContacts);
